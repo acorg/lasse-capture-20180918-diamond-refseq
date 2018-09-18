@@ -6,6 +6,7 @@
 # 'collect' step that is only run once.
 log=$sampleLogFile
 out=summary-virus
+tasks="$@"
 
 logStepStart $log
 logTaskToSlurmOutput panel $log
@@ -30,8 +31,6 @@ function panel()
         logStepStop $log
         exit 1
     fi
-
-    tasks=$(tasksForSample)
 
     allJSON=
     allFASTQ=

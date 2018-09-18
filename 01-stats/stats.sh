@@ -8,7 +8,6 @@ out=$task.count
 
 logStepStart $log
 logTaskToSlurmOutput $task $log
-checkFastq $fastq $log
 
 function stats()
 {

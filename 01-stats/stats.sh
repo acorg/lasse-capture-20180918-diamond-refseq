@@ -15,9 +15,10 @@ function stats()
     # some reason.
     rm -f $out
 
+    echo -n "$(sampleName) " > $out
     # Get read count from output of the trim step.  AdapterRemoval prints
     # carriage returns in its output, which we first convert to newlines.
-    tr '\r' '\n' <  ../000-trim/$task.out | tail -n 1 | cut -f5 -d ' ' | tr -d , > $out
+    tr '\r' '\n' <  ../005-trim/$task.out | tail -n 1 | cut -f5 -d ' ' | tr -d , >> $out
 }
 
 if [ $SP_SIMULATE = "1" ]

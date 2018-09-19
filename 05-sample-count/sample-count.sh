@@ -27,7 +27,7 @@ function sample_count()
     echo "  sample count started at $(date)" >> $log
     for task in $tasks
     do
-        cat ../01-stats/$task.count
+        cat ../01-stats/$(basename $task).count
     done | awk '{sum += $2} END {printf "'$sample' %d\n", sum}' > $out
     echo "  sample count stopped at $(date)" >> $log
 }

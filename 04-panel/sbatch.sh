@@ -2,7 +2,10 @@
 
 . ../common.sh
 
-task=$1
+# Note that the command line will contain multiple arguments. One for each
+# FASTQ that was originally processed for this sample.
+task="$@"
+
 log=$logDir/sbatch.log
 # The following must have the identical value as is set in panel.sh
 out=summary-virus
@@ -17,10 +20,10 @@ then
     # there's no need to do anything. Just pass along our task name to the
     # next pipeline step.
     echo "  Ouput file $out already exists and SP_FORCE is 0. Nothing to do." >> $log
-    echo "TASK: $task"
+    echo "TASK: panel"
 else
     jobid=$(sbatch -n 1 $SP_DEPENDENCY_ARG $SP_NICE_ARG submit.sh $task | cut -f4 -d' ')
-    echo "TASK: $task $jobid"
+    echo "TASK: panel $jobid"
     echo "  Job id is $jobid" >> $log
 fi
 

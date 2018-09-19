@@ -77,8 +77,7 @@ function panel()
       --maxTitles 150 \
       --minMatchingReads 10 \
       --scoreCutoff 50 \
-      --negativeTitleRegex phage \
-      --databaseFastaFilename $dbFastaFile > summary-proteins
+      --negativeTitleRegex phage > summary-proteins
     echo "  noninteractive-alignment-panel.py stopped at $(date)" >> $log
 
     echo "  proteins-to-pathogens.py started at $(date)" >> $log

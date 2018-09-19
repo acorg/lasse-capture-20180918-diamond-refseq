@@ -4,7 +4,8 @@
 
 task=$1
 log=$logDir/sbatch.log
-# The following must have the identical value as is set in stats.sh
+sample=$(sampleName)
+# The following must have the identical value as is set in sample-count.sh
 out=$sample.count
 
 echo "$(basename $(pwd)) sbatch.sh running at $(date)" >> $log

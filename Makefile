@@ -34,6 +34,7 @@ clobber: clean
                005-trim/*.settings \
                02-map/*.sam \
                02-map/*.bam \
+               02-map/*-unmapped.fastq.gz \
                03-diamond/*.json.bz2 \
                04-panel/out \
                04-panel/summary-proteins \

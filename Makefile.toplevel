@@ -5,7 +5,7 @@
 
 .PHONY: all, html, tar, clean
 
-DB := /rds/project/djs200/rds-djs200-acorg/bt/root/share/ncbi/viral-refseq/viral-protein-20180717/viral.protein.fasta
+DB := /rds/project/djs200/rds-djs200-acorg/bt/root/share/ncbi/viral-refseq/viral-protein-20190729/viral.protein.fasta
 
 all:
 	@echo "There is no default make target. Try make html or make tar."
